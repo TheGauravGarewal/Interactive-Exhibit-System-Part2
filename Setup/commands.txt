@@ -1,0 +1,25 @@
+# Install mpv
+sudo apt update
+sudo apt install mpv -y
+
+# Create service file
+sudo nano /etc/systemd/system/exhibit.service
+
+# Reload systemd
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+
+# Enable auto start
+sudo systemctl enable exhibit.service
+
+# Start service
+sudo systemctl start exhibit.service
+
+# Restart service
+sudo systemctl restart exhibit.service
+
+# Check status
+systemctl status exhibit.service
+
+# Remove mpv socket (if error)
+rm /tmp/mpvsocket
